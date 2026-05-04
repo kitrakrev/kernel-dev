@@ -1,0 +1,11 @@
+graph built (lazy), no compute yet
+after eval:
+a = array([1, 2, 3, 4], dtype=float32)
+b = array([10, 20, 30, 40], dtype=float32)
+c = a+b = array([11, 22, 33, 44], dtype=float32)
+d = c*2 = array([22, 44, 66, 88], dtype=float32)
+e = sum(d) = 220.0
+matmul (3,4)@(4,2) = (3, 2)
+array([[-1.85004, 4.71918],
+       [-4.47246, 2.58904],
+       [0.287512, -1.095]], dtype=float32)
