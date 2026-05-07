@@ -1,0 +1,6 @@
+epoch  0 loss=2.3001 acc=0.138
+epoch  4 loss=2.2936 acc=0.151
+epoch  8 loss=2.2872 acc=0.158
+epoch 12 loss=2.2810 acc=0.179
+epoch 16 loss=2.2749 acc=0.198
+final loss=2.2704 acc=0.197
