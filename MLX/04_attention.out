@@ -1,0 +1,8 @@
+input  : (2, 8, 64)
+output : (2, 8, 64)
+attn   : (2, 4, 8, 8) (B,H,T,T)
+causal check — row 0 only attends pos 0:
+array([1, 0, 0, ..., 0, 0, 0], dtype=float32)
+row 3 attends pos 0..3:
+array([0.27764, 0.204198, 0.276514, ..., 0, 0, 0], dtype=float32)
+row sums (should be 1): array([1, 1, 1, ..., 1, 1, 1], dtype=float32)
