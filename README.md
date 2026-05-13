@@ -9,3 +9,11 @@ MLX/    Apple Silicon exercises (local M4)
 CUDA/   NVIDIA exercises (Colab T4)
 TPU/    JAX/TPU exercises (Colab v5e)
 ```
+
+## Device matrix
+
+| Stack | Hardware            | Compiler / runtime        | Verified on             |
+|-------|---------------------|---------------------------|-------------------------|
+| MLX   | Apple M4, 16 GB     | MLX 0.31.1, Metal         | macOS 26.2 arm64        |
+| CUDA  | Tesla T4 (sm_75)    | nvcc, CUDA 13.0           | Colab Linux 6.6 x86_64  |
+| TPU   | v5 lite (v5e), 1 ch | JAX 0.7.2, PJRT C API     | Colab Linux 6.6 x86_64  |
