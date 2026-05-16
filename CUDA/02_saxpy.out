@@ -1,0 +1,5 @@
+N=16777216, a=3.0, x=1.0, y=2.0
+y[0]=5.0 (expect 5.0)
+y[N-1]=5.0 (expect 5.0)
+kernel time: 0.861 ms
+effective bandwidth: 233.81 GB/s
