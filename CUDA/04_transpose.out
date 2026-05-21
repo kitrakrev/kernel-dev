@@ -1,0 +1,5 @@
+N=4096 (matrix 4096x4096, 67.1 MB)
+naive transpose: 1.857 ms, 72.26 GB/s
+tiled transpose: 0.682 ms, 196.89 GB/s
+speedup: 2.72x
+correctness: OK
