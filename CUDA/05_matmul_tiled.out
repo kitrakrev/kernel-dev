@@ -1,0 +1,6 @@
+N=1024 (matmul 1024x1024)
+naive: 5.856 ms, 366.70 GFLOPS
+tiled: 3.658 ms, 587.09 GFLOPS
+speedup: 1.60x
+C[0,0]=2048.0 (expect 2048.0)
+C[N-1,N-1]=2048.0 (expect 2048.0)
