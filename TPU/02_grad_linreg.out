@@ -1,0 +1,7 @@
+step   0 loss=14.6721 w=0.7111 b=0.4002
+step  40 loss=0.0102 w=3.0041 b=1.9894
+step  80 loss=0.0102 w=3.0042 b=1.9896
+step 120 loss=0.0102 w=3.0042 b=1.9896
+step 160 loss=0.0102 w=3.0042 b=1.9896
+final w=3.0042 (true 3.0), b=1.9896 (true 2.0)
+device: TPU_0(process=0,(0,0,0,0))
