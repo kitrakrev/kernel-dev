@@ -30,3 +30,36 @@ TPU/    JAX/TPU exercises (Colab v5e)
 
 Build : `nvcc -O3 -arch=sm_75 <file> -o <exe>`
 
+## TPU/JAX exercises
+
+| # | File                     | Concept                                |
+|---|--------------------------|----------------------------------------|
+| 1 | `01_jnp_jit.py`          | jnp ops, jit, inspect HLO              |
+| 2 | `02_grad_linreg.py`      | value_and_grad, plain SGD              |
+| 3 | `03_flax_mnist.py`       | flax.nnx MLP + optax SGD               |
+| 4 | `04_vmap.py`             | per-example fn, vmap, nested vmap      |
+| 5 | `05_shard_map.py`        | Mesh + PartitionSpec + shard_map       |
+
+Run : `colab exec -s tpu -f <file>`
+
+## MLX exercises
+
+| # | File                       | Concept                                 |
+|---|----------------------------|-----------------------------------------|
+| 1 | `01_array_ops.py`          | mx.array, lazy ops, mx.eval             |
+| 2 | `02_linear_regression.py`  | value_and_grad, manual SGD              |
+| 3 | `03_mlp_mnist.py`          | nn.Module MLP + nn.value_and_grad       |
+| 4 | `04_attention.py`          | scaled-dot-product + multi-head attn    |
+| 5 | `05_llama_inference.py`    | tiny GPT decoder + greedy decode        |
+
+Run : `python3 <file>`
+
+## Outputs
+
+Each `NN_*.py` / `NN_*.cu` has a sibling `NN_*.out` containing real captured
+stdout from the listed hardware. No mocked results.
+
+## Identity
+
+All commits in this repo are authored as `kitrakrev` via per-command `git -c`
+overrides — no global config change on the development host.
