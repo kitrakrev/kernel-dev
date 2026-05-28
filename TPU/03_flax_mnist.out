@@ -1,0 +1,7 @@
+epoch  0 loss=2.3906 acc=0.115
+epoch  4 loss=2.3139 acc=0.133
+epoch  8 loss=2.2573 acc=0.170
+epoch 12 loss=2.2101 acc=0.211
+epoch 16 loss=2.1673 acc=0.237
+final loss=2.1366 acc=0.256
+device: TPU_0(process=0,(0,0,0,0))
