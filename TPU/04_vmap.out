@@ -1,0 +1,5 @@
+single example shape: (64,)
+vmapped batch shape: (1024, 64)
+jit+vmap mean time: 0.200 ms/iter (batch=1024)
+nested vmap shape: (4, 8)
+device: TPU_0(process=0,(0,0,0,0))
