@@ -1,0 +1,6 @@
+device count: 1 device[0]: TPU_0(process=0,(0,0,0,0))
+mesh: Mesh('data': 1, axis_types=(Auto,))
+input shape: (64, 128)
+output shape: (64, 128)
+sample mean: 0.0007628166349604726
+output sharding: NamedSharding(mesh=Mesh('data': 1, axis_types=(Auto,)), spec=PartitionSpec('data', None), memory_kind=device)
