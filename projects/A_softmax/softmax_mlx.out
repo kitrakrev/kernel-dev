@@ -1,0 +1,5 @@
+backend: MLX
+shape: (4096, 4096)
+row sums (first 4): [1.0, 1.0, 1.0, 0.9999999403953552]
+per-call: 7.595 ms
+approx bandwidth: 26.51 GB/s
