@@ -1,0 +1,5 @@
+backend: CUDA (Tesla T4)
+shape: (4096, 4096)
+row 0 sum (should ~1.0): 1.000007
+per-call: 0.844 ms
+approx bandwidth: 238.66 GB/s
