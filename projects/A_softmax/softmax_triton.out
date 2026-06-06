@@ -1,0 +1,5 @@
+backend: Triton (Tesla T4)
+shape: (4096, 4096)
+row sums (first 4): [0.9999998807907104, 1.0, 1.0, 1.0]
+per-call: 0.590 ms
+approx bandwidth: 227.65 GB/s
