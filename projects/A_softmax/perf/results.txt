@@ -1,0 +1,28 @@
+=== MLX (local Apple M4) ===
+backend: MLX
+shape: (4096, 4096)
+row sums (first 4): [1.0, 1.0, 1.0, 0.9999999403953552]
+per-call: 7.595 ms
+approx bandwidth: 26.51 GB/s
+
+=== JAX / TPU v5e ===
+backend: JAX/TPU
+device: TPU_0(process=0,(0,0,0,0))
+shape: (4096, 4096)
+row sums (first 4): [1.0, 0.9999998807907104, 0.9999998807907104, 1.0000001192092896]
+per-call: 0.517 ms
+approx bandwidth: 389.14 GB/s
+
+=== Triton / Tesla T4 ===
+backend: Triton (Tesla T4)
+shape: (4096, 4096)
+row sums (first 4): [0.9999998807907104, 1.0, 1.0, 1.0]
+per-call: 0.590 ms
+approx bandwidth: 227.65 GB/s
+
+=== raw CUDA / Tesla T4 ===
+backend: CUDA (Tesla T4)
+shape: (4096, 4096)
+row 0 sum (should ~1.0): 1.000007
+per-call: 0.844 ms
+approx bandwidth: 238.66 GB/s
