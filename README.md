@@ -8,6 +8,8 @@ Hands-on accelerator kernels and training primitives across multiple stacks.
 MLX/    Apple Silicon exercises (local M4)
 CUDA/   NVIDIA exercises (Colab T4)
 TPU/    JAX/TPU exercises (Colab v5e)
+projects/
+  A_softmax/   softmax 4 ways (MLX, JAX, CUDA, Triton)
 ```
 
 ## Device matrix
@@ -53,6 +55,13 @@ Run : `colab exec -s tpu -f <file>`
 | 5 | `05_llama_inference.py`    | tiny GPT decoder + greedy decode        |
 
 Run : `python3 <file>`
+
+## Projects
+
+### Project A — softmax 4 ways
+
+Row-wise softmax on `(4096, 4096)` implemented in MLX, JAX, raw CUDA, and Triton.
+See `projects/A_softmax/bench.md` for cross-stack timings.
 
 ## Outputs
 
