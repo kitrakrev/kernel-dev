@@ -1,0 +1,6 @@
+backend: naive CUDA (Tesla T4)
+shape: (2048, 2048) x (2048, 2048)
+C[0,0] = 2048.0 (expect 2048.0)
+per-call: 47.689 ms
+perf: 0.360 TFLOPS
+T4 fp32 peak: 8.1 TFLOPS -> 4.4% of peak
