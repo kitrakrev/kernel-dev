@@ -1,0 +1,6 @@
+backend: tiled CUDA (TILE=32, T4)
+shape: (2048, 2048) x (2048, 2048)
+C[0,0] = 2048.0 (expect 2048.0)
+per-call: 21.217 ms
+perf: 0.810 TFLOPS
+T4 fp32 peak: 8.1 TFLOPS -> 10.0% of peak
