@@ -1,0 +1,5 @@
+backend: cuBLAS HGEMM (Tensor Cores, fp16, Tesla T4)
+shape: (2048, 2048) x (2048, 2048) fp16
+per-call: 0.693 ms
+perf: 24.794 TFLOPS
+T4 fp16 Tensor Core peak: 65 TFLOPS -> 38.1% of peak
