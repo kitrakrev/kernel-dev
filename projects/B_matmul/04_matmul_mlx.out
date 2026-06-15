@@ -1,0 +1,10 @@
+backend: MLX matmul (Apple M4 GPU)
+shape: (2048, 2048) x (2048, 2048) fp32
+per-call: 10.797 ms
+perf: 1.591 TFLOPS
+M4 GPU fp32 peak ~4.6 TFLOPS -> 34.6% of peak
+
+shape: (2048, 2048) x (2048, 2048) fp16
+per-call: 8.352 ms
+perf: 2.057 TFLOPS
+M4 GPU fp16 peak ~9 TFLOPS -> 22.9% of peak
