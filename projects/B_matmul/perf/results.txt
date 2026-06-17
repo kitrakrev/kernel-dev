@@ -1,0 +1,42 @@
+=== rung 1: naive CUDA (T4) ===
+backend: naive CUDA (Tesla T4)
+shape: (2048, 2048) x (2048, 2048)
+C[0,0] = 2048.0 (expect 2048.0)
+per-call: 47.689 ms
+perf: 0.360 TFLOPS
+T4 fp32 peak: 8.1 TFLOPS -> 4.4% of peak
+
+=== rung 2: tiled CUDA (T4) ===
+backend: tiled CUDA (TILE=32, T4)
+shape: (2048, 2048) x (2048, 2048)
+C[0,0] = 2048.0 (expect 2048.0)
+per-call: 21.217 ms
+perf: 0.810 TFLOPS
+T4 fp32 peak: 8.1 TFLOPS -> 10.0% of peak
+
+=== rung 3: cuBLAS HGEMM Tensor Core (T4) ===
+backend: cuBLAS HGEMM (Tensor Cores, fp16, Tesla T4)
+shape: (2048, 2048) x (2048, 2048) fp16
+per-call: 0.693 ms
+perf: 24.794 TFLOPS
+T4 fp16 Tensor Core peak: 65 TFLOPS -> 38.1% of peak
+
+=== rung 4: MLX (Apple M4, local) ===
+backend: MLX matmul (Apple M4 GPU)
+shape: (2048, 2048) x (2048, 2048) fp32
+per-call: 10.797 ms
+perf: 1.591 TFLOPS
+M4 GPU fp32 peak ~4.6 TFLOPS -> 34.6% of peak
+
+shape: (2048, 2048) x (2048, 2048) fp16
+per-call: 8.352 ms
+perf: 2.057 TFLOPS
+M4 GPU fp16 peak ~9 TFLOPS -> 22.9% of peak
+
+=== rung 5: JAX MXU (TPU v5e) ===
+backend: JAX/XLA -> MXU (TPU v5e)
+device: TPU_0(process=0,(0,0,0,0))
+shape: (2048, 2048) x (2048, 2048) bf16
+per-call: 0.316 ms
+perf: 54.409 TFLOPS
+v5e bf16 peak ~197 TFLOPS -> 27.6% of peak
