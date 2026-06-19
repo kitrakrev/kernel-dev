@@ -1,0 +1,3 @@
+      copy :    2.109 ms     63.63 GB/s
+       add :    2.719 ms     74.03 GB/s
+     scale :    1.621 ms     82.79 GB/s
