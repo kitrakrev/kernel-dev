@@ -1,0 +1,13 @@
+backend: cuBLAS via torch (Tesla T4)
+     N      dtype         ms     TFLOPS
+   256    float32      0.049      0.680
+   256    float16      0.026      1.301
+   512    float32      0.119      2.250
+   512    float16      0.033      8.255
+  1024    float32      0.722      2.976
+  1024    float16      0.127     16.908
+  2048    float32      5.241      3.278
+  2048    float16      0.830     20.698
+  4096    float32     33.634      4.086
+  4096    float16      5.728     23.993
+T4 peak fp32: 8.1 TFLOPS, fp16 Tensor Core: 65 TFLOPS
