@@ -1,0 +1,7 @@
+backend: CUDA streaming kernels (Tesla T4)
+N=67108864 (268 MB per array)
+        op :     GB/s
+      copy :   254.47
+     scale :   254.25
+       add :   263.89
+T4 HBM peak ~320 GB/s
