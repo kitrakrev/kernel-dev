@@ -5,11 +5,12 @@ Hands-on accelerator kernels and training primitives across multiple stacks.
 ## Layout
 
 ```
-MLX/    Apple Silicon exercises (local M4)
-CUDA/   NVIDIA exercises (Colab T4)
-TPU/    JAX/TPU exercises (Colab v5e)
+MLX/    Apple Silicon exercises + perf benches (local M4)
+CUDA/   NVIDIA exercises + perf benches (Colab T4)
+TPU/    JAX/TPU exercises + perf benches (Colab v5e)
 projects/
-  A_softmax/   softmax 4 ways (MLX, JAX, CUDA, Triton)
+  A_softmax/   softmax 4 ways (MLX, JAX, CUDA, Triton) + perf
+  B_matmul/    matmul ladder w/ roofline analysis + perf
 ```
 
 ## Device matrix
@@ -62,6 +63,19 @@ Run : `python3 <file>`
 
 Row-wise softmax on `(4096, 4096)` implemented in MLX, JAX, raw CUDA, and Triton.
 See `projects/A_softmax/bench.md` for cross-stack timings.
+
+### Project B — matmul ladder + roofline
+
+Climbs from naive CUDA -> tiled CUDA -> Tensor Core cuBLAS -> MLX -> JAX MXU,
+tracking TFLOPS vs peak at each rung. See `projects/B_matmul/roofline.md`.
+
+## Perf benches
+
+Each stack has a `perf/` directory with reproducible benchmarks:
+- `MLX/perf/`  — matmul size sweep, memory BW
+- `CUDA/perf/` — matmul size sweep (cuBLAS), streaming BW
+- `TPU/perf/`  — matmul size sweep (MXU), HBM BW
+- `projects/*/perf/` — end-to-end project runners (`run_all.sh`) + cached `results.txt`
 
 ## Outputs
 
