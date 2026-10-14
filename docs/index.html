@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kernel-dev</title><meta name="description" content="Hands-on accelerator kernels and training primitives across MLX, CUDA and TPU/JAX.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1d1d1f;--muted:#6b6b70;--line:#e3e1da;--accent:#00684a;--side:#0f1f1a;--sideink:#d7e7df}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121413;--panel:#1b1e1c;--ink:#ecece8;--muted:#9a9c98;--line:#2c302d;--accent:#4fc08d;--side:#0a1410}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--side);color:var(--sideink);padding:40px 16px 32px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+header h1{color:#fff;margin:0 0 6px;font-size:32px;letter-spacing:-.01em}
+header p{margin:0 0 16px;opacity:.85;font-size:16px}
+.btns a{display:inline-block;margin:0 8px 8px 0;padding:7px 14px;border-radius:8px;text-decoration:none;font-size:14px;border:1px solid #2f5a49;color:#fff}
+.btns a.pri{background:#00684a;border-color:#00684a}
+main{padding:24px 16px 40px}
+h2{font-size:19px;margin:28px 0 10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+ul{margin:6px 0;padding-left:20px}li{margin:4px 0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.flow span{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:7px;padding:6px 10px;font-size:13px}
+.flow i{color:var(--muted);font-style:normal}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}.tw{overflow-x:auto}
+.pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12.5px;border:1px solid var(--line);margin:0 6px 6px 0;background:var(--panel)}
+.muted{color:var(--muted)}code{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+a{color:var(--accent)}footer{border-top:1px solid var(--line);padding:18px 16px;color:var(--muted);font-size:13px}
+@media (max-width:600px){header h1{font-size:26px}}
+</style></head><body>
+<header><div class="wrap"><h1>kernel-dev</h1><p>Hands-on accelerator kernels and training primitives across MLX, CUDA and TPU/JAX.</p>
+<div class="btns"><a class="pri" href="https://github.com/kitrakrev/kernel-dev">View on GitHub</a><a href="https://kitrakrev.github.io/">&larr; kitrakrev.github.io</a></div></div></header>
+<main class="wrap">
+<h2>What it does</h2><div class="card"><p>A set of progressive exercises and benchmarks across three accelerator stacks, plus two cross-stack projects. Each exercise has a sibling <code>.out</code> file with real captured stdout from the listed hardware.</p><ul><li><b>CUDA</b> (Tesla T4): vector add, SAXPY bandwidth, shared-memory reduction, transpose/coalescing, tiled matmul</li><li><b>TPU/JAX</b> (v5e): jit + HLO, grad/linear regression, flax.nnx MNIST, vmap, shard_map</li><li><b>MLX</b> (Apple M4): array ops, linear regression, MLP MNIST, attention, tiny GPT decoder inference</li></ul></div>
+<h2>How it works</h2><div class="card"><div class="flow"><span>Exercise (.py / .cu)</span> <i>&rarr;</i> <span>Run on target hardware</span> <i>&rarr;</i> <span>Captured .out</span> <i>&rarr;</i> <span>perf/ benches</span> <i>&rarr;</i> <span>Cross-stack projects</span></div><ul><li><b>Project A — softmax 4 ways:</b> row-wise softmax on (4096, 4096) in MLX, JAX, raw CUDA and Triton; timings in <code>projects/A_softmax/bench.md</code>.</li><li><b>Project B — matmul ladder + roofline:</b> naive CUDA → tiled CUDA → Tensor Core cuBLAS → MLX → JAX MXU, tracking TFLOPS vs peak; see <code>projects/B_matmul/roofline.md</code>.</li><li>Each stack has a <code>perf/</code> directory: matmul size sweeps and memory/HBM bandwidth benches; projects have <code>run_all.sh</code> runners with cached <code>results.txt</code>.</li></ul></div>
+
+<h2>Tech stack</h2><div><span class="pill">CUDA (nvcc, sm_75)</span><span class="pill">Triton</span><span class="pill">JAX / Flax / Optax</span><span class="pill">TPU v5e</span><span class="pill">MLX / Metal</span><span class="pill">Apple M4</span></div>
+
+</main>
+<footer><div class="wrap">Source: <a href="https://github.com/kitrakrev/kernel-dev">github.com/kitrakrev/kernel-dev</a> &middot; <a href="https://kitrakrev.github.io/">kitrakrev.github.io</a></div></footer>
+</body></html>
